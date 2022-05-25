@@ -4,7 +4,7 @@ from PyQt5 import uic, QtWidgets
 from api import game
 
 def win():
-    dlg.word.setText(word)
+    dlg.word.setText(letterSpacing(word))
     print(">> You win!")
 
 def lose():
@@ -39,6 +39,10 @@ def emptyInput():
 def clearInput():
     dlg.input.setText("")
 
+def letterSpacing(string):
+    arr = list(string)
+    return " ".join(arr)
+    
 def checkInput():
     global word
     global mask
@@ -53,7 +57,7 @@ def checkInput():
     if userInput in mask: AlreadyTypedLetter(); clearInput(); return
     else:
         hit, mask = checkWord(userInput, mask)
-        dlg.word.setText(mask)
+        dlg.word.setText(letterSpacing(mask))
         if not hit:
             print("> errastes")
             if (life == 1): lose()
@@ -67,12 +71,12 @@ def checkInput():
 app = QtWidgets.QApplication([])
 dlg = uic.loadUi(path.join(path.dirname(__file__), "screen.ui"))
 
-word = "banana"
+word = "guilherme"
 mask = '_'*len(word)
 err = list()
 
 dlg.life.setText('6')
-dlg.word.setText(mask)
+dlg.word.setText(letterSpacing(mask))
 
 dlg.check.clicked.connect(checkInput)
 
