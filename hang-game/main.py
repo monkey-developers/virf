@@ -1,84 +1,76 @@
 from os import system, path
-from PyQt5 import uic, QtWidgets
+from PyQt5 import uic, QtWidgets, QtGui
+import sys
+from api import *
 
-from api import game
+def setGame(setWord, attempts, tip):
+    global mask
+    global word
+    global err
 
-def win():
-    dlg.word.setText(letterSpacing(word))
-    print(">> You win!")
+    err = list()
 
-def lose():
-    print(">> You lose!")
-
-def noAttempt():
-    print("> Acabou suas tentativas");
-
-def wordWrong():
-    print("> Sua palavra não corresponde")
-
-def AlreadyTypedLetter():
-    print("> Você digitou essa letra")
-
-def checkWord(userInput, mask):
-    correctCharIndex = list()
-    errorChars = list()
-    hit = False
-
-    for i, v in enumerate(list(word)): 
-        if v == userInput: hit = True; correctCharIndex.append(i)
-
-    if not hit: errorChars.append(userInput)
-
-    maskList = list(mask)
-    for j in correctCharIndex: maskList[j] = userInput
-    return hit, "".join(maskList)
-
-def emptyInput():
-    print("> You didnt type anything")
-
-def clearInput():
-    dlg.input.setText("")
-
-def letterSpacing(string):
-    arr = list(string)
-    return " ".join(arr)
+    dlg.check.setText("Check")
+    dlg.result.setText("")
+    dlg.hit.setText("")
+    dlg.tip.setText(tip)
+    # dlg.monkey.setPixmap(QtGui.QPixmap("full-monkey.png"))
+    # pixmap = QtGui.QPixmap('full-monkey.png')
+    dlg.monkey.setText("Monkey")
+    # dlg.monkey.setPixmap(pixmap)
+    # dlg.monkey.setScaledContents(True)
     
-def checkInput():
+
+    word = setWord
+    mask = '_'*len(word)
+    dlg.life.setText(attempts)
+    dlg.word.setText(letterSpacing(mask))
+
+
+def resetGame():
+    txtWord, txtTip = getWord()
+    setGame(txtWord, "3", txtTip)
+    print("> Game reset")
+
+def checkInput(dlg):
     global word
     global mask
+    global err
+
+    if dlg.check.text() == "Reset": resetGame(); return
     userInput = dlg.input.toPlainText()
     life = int(dlg.life.text())
 
-    if life == 0: noAttempt(); clearInput(); return
-    if userInput == word: win(); return
-    if userInput != word and len(userInput) > 1: wordWrong(); clearInput(); return
-    if userInput == "": emptyInput(); return
+    if life == 0: noAttempt(); clearInput(dlg); return
+    if userInput == word: win(dlg, word); return
+    if userInput != word and len(userInput) > 1: wordWrong(dlg); clearInput(dlg); return
+    if userInput == "": emptyInput(dlg); return
 
-    if userInput in mask: AlreadyTypedLetter(); clearInput(); return
+    if userInput in mask: AlreadyTypedLetter(dlg); clearInput(dlg); return
     else:
-        hit, mask = checkWord(userInput, mask)
+        hit, mask, err = checkWord(userInput, mask, word, err)
         dlg.word.setText(letterSpacing(mask))
+        if mask == word: win(dlg, word)
         if not hit:
-            print("> errastes")
-            if (life == 1): lose()
+            falseHit(dlg, err)
+            if (life == 1): lose(dlg)
             dlg.life.setText(str(life-1))
-        if mask == word: win()
+        if hit:
+            trueHit(dlg)
         print("> Acertou:",hit)
         print("> Mascara:",mask)
-        clearInput()
-
+        clearInput(dlg)
 
 app = QtWidgets.QApplication([])
 dlg = uic.loadUi(path.join(path.dirname(__file__), "screen.ui"))
 
-word = "guilherme"
-mask = '_'*len(word)
-err = list()
+word, mask, err = "", "", list()
 
-dlg.life.setText('6')
-dlg.word.setText(letterSpacing(mask))
+txtWord, txtTip = getWord()
 
-dlg.check.clicked.connect(checkInput)
+setGame(txtWord, "3", txtTip)
+
+dlg.check.clicked.connect(lambda: checkInput(dlg))
 
 dlg.show()
 app.exec()
