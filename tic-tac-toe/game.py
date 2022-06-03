@@ -4,6 +4,7 @@ gameUi = None
 def reset():
     global player, gameUi
     player = None
+    for i in range(9): eval('gameUi.button{}.clicked.disconnect()'.format(i))
     gameUi.startButton.show()
 
 def is_game_end():
