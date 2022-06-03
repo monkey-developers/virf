@@ -32,10 +32,27 @@ def is_game_end():
     inverted_rows = list(reversed(rows))
     for m in range(3): diag2.append(inverted_rows[m][m])
     
-    print(rows)
-    print(cols)
-    print(diag1)
-    print(diag2)
+    # print(rows)
+    # print(cols)
+    # print(diag1)
+    # print(diag2)
+    
+    def verify_list(arr):
+        return all(element == arr[0] for element in arr)
+
+    def verify_mtx(mtx):
+        for b in range(3): 
+            print(mtx[b]); 
+            print(verify_list(mtx[b]))
+        #for a in range(3):
+            #win = verify_list(mtx[a])
+        return False
+
+    # if verify_list(diag1): print("Someone won")
+    if verify_mtx(rows): print("Someone won")
+
+    # if verify_list(diag1) or verify_list(diag2) or verify_mtx(rows) or verify_mtx(cols):
+        #print("Someone won")
 
     if not '' in arr: print("Empate!"); reset()
 
