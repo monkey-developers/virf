@@ -11,13 +11,33 @@ def is_game_end():
     global gameUi
     end = False
     arr = list()
+    rows = list()
+    row = list()
     for i in range(9):
         buttonText = eval('gameUi.button{}.text()'.format(i))
         arr.append(buttonText)
+        row.append(buttonText)
+        if i == 2 or i == 5 or i == 8: rows.append(row); row = []
+
+    cols = list()
+    for j in range(3):
+        col = list()
+        for k in range(3): col.append(rows[k][j])
+        cols.append(col)
+        
+    diag1 = list()
+    for l in range(3): diag1.append(rows[l][l])
+    
+    diag2 = list()
+    inverted_rows = list(reversed(rows))
+    for m in range(3): diag2.append(inverted_rows[m][m])
+    
+    print(rows)
+    print(cols)
+    print(diag1)
+    print(diag2)
 
     if not '' in arr: print("Empate!"); reset()
-
-    print(arr)
 
 def turn(pos):
     global player, gameUi
@@ -25,10 +45,8 @@ def turn(pos):
     print(">Player:", player)
     eval('gameUi.button{}.setText("{}")'.format(pos, player))
     eval('gameUi.button{}.setEnabled(False)'.format(pos))
-
     if player == "X": player = "O"
     else : player = "X"
-
     is_game_end()
 
 def setup(ui):
