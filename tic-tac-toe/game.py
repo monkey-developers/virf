@@ -9,7 +9,6 @@ def reset():
 
 def is_game_end():
     global gameUi
-    end = False
     arr = list()
     rows = list()
     row = list()
@@ -32,29 +31,26 @@ def is_game_end():
     inverted_rows = list(reversed(rows))
     for m in range(3): diag2.append(inverted_rows[m][m])
     
-    # print(rows)
-    # print(cols)
-    # print(diag1)
-    # print(diag2)
-    
     def verify_list(arr):
+        if (arr[0] == '' or arr[1] == '' or arr[2] == ''): return False
         return all(element == arr[0] for element in arr)
 
     def verify_mtx(mtx):
-        for b in range(3): 
-            print(mtx[b]); 
-            print(verify_list(mtx[b]))
-        #for a in range(3):
-            #win = verify_list(mtx[a])
+        for b in range(3):
+            if (verify_list(mtx[b])): 
+                return True
         return False
 
-    # if verify_list(diag1): print("Someone won")
-    if verify_mtx(rows): print("Someone won")
-
-    # if verify_list(diag1) or verify_list(diag2) or verify_mtx(rows) or verify_mtx(cols):
-        #print("Someone won")
+    if verify_list(diag1) or verify_list(diag2) or verify_mtx(rows) or verify_mtx(cols):
+        togglePlayer()
+        print(f"{player} won")
 
     if not '' in arr: print("Empate!"); reset()
+
+def togglePlayer():
+    global player
+    if player == "X": player = "O"
+    else : player = "X"
 
 def turn(pos):
     global player, gameUi
@@ -62,8 +58,7 @@ def turn(pos):
     print(">Player:", player)
     eval('gameUi.button{}.setText("{}")'.format(pos, player))
     eval('gameUi.button{}.setEnabled(False)'.format(pos))
-    if player == "X": player = "O"
-    else : player = "X"
+    togglePlayer()
     is_game_end()
 
 def setup(ui):
