@@ -1,11 +1,21 @@
 player = None
 gameUi = None
 
+def playAgain():
+    global gameUi
+    gameUi.startButton.show()
+    gameUi.resetButton.hide()
+    gameUi.label.setText("")
+
+
 def reset():
     global player, gameUi
     player = None
     for i in range(9): eval('gameUi.button{}.clicked.disconnect()'.format(i))
-    gameUi.startButton.show()
+    # gameUi.startButton.show()
+    gameUi.resetButton.show()
+    gameUi.resetButton.clicked.connect(playAgain)
+
 
 def is_game_end():
     global gameUi
@@ -37,15 +47,15 @@ def is_game_end():
 
     def verify_mtx(mtx):
         for b in range(3):
-            if (verify_list(mtx[b])): 
-                return True
+            if (verify_list(mtx[b])): return True
         return False
 
     if verify_list(diag1) or verify_list(diag2) or verify_mtx(rows) or verify_mtx(cols):
         togglePlayer()
-        print(f"{player} won")
+        gameUi.label.setText(f"Player {player} won")
+        reset()
 
-    if not '' in arr: print("Empate!"); reset()
+    if not '' in arr: gameUi.label.setText("Draw!"); reset()
 
 def togglePlayer():
     global player

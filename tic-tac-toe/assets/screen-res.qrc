@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="minecraft">
+    <file>icon.jpg</file>
+    <file>icon.png</file>
+    <file>wood-block.jpg</file>
+    <file>obsidian-block.jpg</file>
+    <file>mine-wallpaper.jpg</file>
+    <file>dirt-block.jpg</file>
+    <file>stone-block.jpg</file>
+  </qresource>
+</RCC>

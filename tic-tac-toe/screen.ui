@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>TicTacToe</class>
+ <widget class="QMainWindow" name="TicTacToe">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>406</width>
-    <height>475</height>
+    <width>564</width>
+    <height>527</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>TicTacToe</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/minecraft/icon.png</normalon>
+   </iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/minecraft/mine-wallpaper.jpg);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="button0">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>80</y>
+      <x>140</x>
+      <y>100</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-image: url(:/minecraft/wood-block.jpg);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -30,11 +48,21 @@
    <widget class="QPushButton" name="button4">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>180</y>
+      <x>240</x>
+      <y>200</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/wood-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -43,11 +71,21 @@
    <widget class="QPushButton" name="button1">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>80</y>
+      <x>240</x>
+      <y>100</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/wood-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -56,11 +94,21 @@
    <widget class="QPushButton" name="button3">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>180</y>
+      <x>140</x>
+      <y>200</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/wood-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -69,11 +117,21 @@
    <widget class="QPushButton" name="button5">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>180</y>
+      <x>340</x>
+      <y>200</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/wood-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -82,11 +140,21 @@
    <widget class="QPushButton" name="button2">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>80</y>
+      <x>340</x>
+      <y>100</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/wood-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -95,11 +163,21 @@
    <widget class="QPushButton" name="button7">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>280</y>
+      <x>240</x>
+      <y>300</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/wood-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -108,11 +186,21 @@
    <widget class="QPushButton" name="button6">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>280</y>
+      <x>140</x>
+      <y>300</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/wood-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -121,11 +209,21 @@
    <widget class="QPushButton" name="button8">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>280</y>
+      <x>340</x>
+      <y>300</y>
       <width>100</width>
       <height>100</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/wood-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
@@ -134,27 +232,23 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>30</y>
-      <width>47</width>
-      <height>13</height>
+      <x>140</x>
+      <y>50</y>
+      <width>301</width>
+      <height>41</height>
      </rect>
     </property>
-    <property name="text">
-     <string>TextLabel</string>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>22</pointsize>
+     </font>
     </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>30</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="startButton">
@@ -163,21 +257,65 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>80</y>
+      <x>140</x>
+      <y>100</y>
       <width>301</width>
       <height>301</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-image: url(:/minecraft/dirt-block.jpg);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Start Game</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="resetButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>410</y>
+      <width>151</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Minecraft</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/minecraft/stone-block.jpg);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Reset Game</string>
+    </property>
+   </widget>
+   <zorder>button0</zorder>
+   <zorder>button4</zorder>
+   <zorder>button1</zorder>
+   <zorder>button3</zorder>
+   <zorder>button5</zorder>
+   <zorder>button2</zorder>
+   <zorder>button7</zorder>
+   <zorder>button6</zorder>
+   <zorder>button8</zorder>
+   <zorder>label</zorder>
+   <zorder>resetButton</zorder>
+   <zorder>startButton</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="assets/screen-res.qrc"/>
+ </resources>
  <connections/>
 </ui>
