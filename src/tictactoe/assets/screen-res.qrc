@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="minecraft">
+    <file>background.png</file>
     <file>icon.jpg</file>
     <file>icon.png</file>
     <file>wood-block.jpg</file>

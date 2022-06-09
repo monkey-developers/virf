@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>564</width>
-    <height>527</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,15 +18,18 @@
     <normalon>:/minecraft/icon.png</normalon>
    </iconset>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/minecraft/mine-wallpaper.jpg);</string>
+   <string notr="true">background-image: url(:/minecraft/background.png);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="button0">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>100</y>
+      <x>60</x>
+      <y>240</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -48,8 +51,8 @@ background-image: url(:/minecraft/wood-block.jpg);</string>
    <widget class="QPushButton" name="button4">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>200</y>
+      <x>160</x>
+      <y>340</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -71,8 +74,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="button1">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>100</y>
+      <x>160</x>
+      <y>240</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -94,8 +97,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="button3">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>200</y>
+      <x>60</x>
+      <y>340</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -117,8 +120,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="button5">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>200</y>
+      <x>260</x>
+      <y>340</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -140,8 +143,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="button2">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>100</y>
+      <x>260</x>
+      <y>240</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -163,8 +166,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="button7">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>300</y>
+      <x>160</x>
+      <y>440</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -186,8 +189,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="button6">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>300</y>
+      <x>60</x>
+      <y>440</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -209,8 +212,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="button8">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>300</y>
+      <x>260</x>
+      <y>440</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -229,66 +232,47 @@ color: rgb(255, 255, 255);</string>
      <string>PushButton</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>50</y>
-      <width>301</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Minecraft</family>
-      <pointsize>22</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="startButton">
     <property name="enabled">
      <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>100</y>
+      <x>60</x>
+      <y>240</y>
       <width>301</width>
       <height>301</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Minecraft</family>
-      <pointsize>16</pointsize>
+      <family>Arcade Normal</family>
+      <pointsize>18</pointsize>
      </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
     </property>
     <property name="styleSheet">
      <string notr="true">background-image: url(:/minecraft/dirt-block.jpg);
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Start Game</string>
+     <string>INICIAR JOGO</string>
     </property>
    </widget>
    <widget class="QPushButton" name="resetButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>410</y>
-      <width>151</width>
+      <x>430</x>
+      <y>340</y>
+      <width>261</width>
       <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Minecraft</family>
+      <family>Arcade Normal</family>
       <pointsize>14</pointsize>
      </font>
     </property>
@@ -297,7 +281,35 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Reset Game</string>
+     <string>CONTINUE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>430</y>
+      <width>251</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arcade Normal</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>Bem vindo!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
    <zorder>button0</zorder>
@@ -309,9 +321,9 @@ color: rgb(255, 255, 255);</string>
    <zorder>button7</zorder>
    <zorder>button6</zorder>
    <zorder>button8</zorder>
-   <zorder>label</zorder>
    <zorder>resetButton</zorder>
    <zorder>startButton</zorder>
+   <zorder>label</zorder>
   </widget>
  </widget>
  <resources>

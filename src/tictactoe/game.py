@@ -1,5 +1,5 @@
 from os import path
-from PyQt5 import uic, QtWidgets
+from PyQt5 import uic, QtWidgets, QtGui
 
 from tictactoe.logic import *
 
@@ -14,6 +14,15 @@ def play():
     print("playing tictactoe")
     
     ui = uic.loadUi(path.join(path.dirname(__file__), "screen.ui"))
+
+    QtGui.QFontDatabase.addApplicationFont("src/Minecraft.ttf")
+
+    ui.setStyleSheet(f'background-image : url(src/tictactoe/assets/background.png);')
+    ui.label.setAutoFillBackground(True);
+    ui.label.setStyleSheet("QLabel { background: transparent; color : #011E31; }")
+    ui.label.setText("Bem vindo!")
+    for i in range(9): 
+        eval('ui.button{}.setStyleSheet("background-image : url(src/tictactoe/assets/obsidian-block.png); color: white;")'.format(i))
     ui.startButton.clicked.connect(lambda: start_game(ui))
     ui.resetButton.hide()
 

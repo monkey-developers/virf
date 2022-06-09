@@ -5,7 +5,7 @@ def playAgain():
     global gameUi
     gameUi.startButton.show()
     gameUi.resetButton.hide()
-    gameUi.label.setText("")
+    gameUi.label.setText("JOGAR NOVAMENTE?")
 
 
 def reset():
@@ -18,7 +18,7 @@ def reset():
 
 
 def is_game_end():
-    global gameUi
+    global gameUi, player
     arr = list()
     rows = list()
     row = list()
@@ -50,15 +50,19 @@ def is_game_end():
             if (verify_list(mtx[b])): return True
         return False
 
-    if verify_list(diag1) or verify_list(diag2) or verify_mtx(rows) or verify_mtx(cols):
-        togglePlayer()
-        gameUi.label.setText(f"Player {player} won")
+    if not '' in arr: 
+        gameUi.label.setText("Empate!!"); 
         reset()
-
-    if not '' in arr: gameUi.label.setText("Draw!"); reset()
+    else:
+        if verify_list(diag1) or verify_list(diag2) or verify_mtx(rows) or verify_mtx(cols):
+            togglePlayer()
+            gameUi.label.setText(f"Jogador {player} venceu!")
+            reset()
+        
+        else: gameUi.label.setText(f"VEZ DO JOGADOR {player}")
 
 def togglePlayer():
-    global player
+    global player, gameUi
     if player == "X": player = "O"
     else : player = "X"
 
@@ -75,6 +79,7 @@ def setup(ui):
     global player, gameUi
     player = "X"
     gameUi = ui
+    gameUi.label.setText(f"VEZ DO JOGADOR {player}")
     for i in range(9):
         eval('gameUi.button{}.setText("")'.format(i))
         eval('gameUi.button{}.setEnabled(True)'.format(i))
