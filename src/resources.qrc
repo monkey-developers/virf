@@ -1,9 +1,9 @@
 <RCC>
   <qresource prefix="menu">
-    <file>jokenpo.jpg</file>
+    <file>background.png</file>
+    <file>jokenpo.png</file>
     <file>github.jpg</file>
     <file>tictactoe.jpg</file>
     <file>hanggame.jpg</file>
-    <file>virf-logo.png</file>
   </qresource>
 </RCC>

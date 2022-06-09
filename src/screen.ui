@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Menu</class>
+ <widget class="QMainWindow" name="Menu">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>889</width>
-    <height>453</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Friv</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/menu/background.png);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="hangGame">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>200</width>
-      <height>200</height>
+      <x>260</x>
+      <y>150</y>
+      <width>80</width>
+      <height>80</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/menu/hanggame.jpg);</string>
+     <string notr="true">background-image: url(:/menu/hanggame.jpg);
+border-radius: 20px;</string>
     </property>
     <property name="text">
      <string/>
@@ -33,14 +37,15 @@
    <widget class="QPushButton" name="ticTacToe">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>20</y>
-      <width>200</width>
-      <height>200</height>
+      <x>60</x>
+      <y>150</y>
+      <width>80</width>
+      <height>80</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/menu/tictactoe.jpg);</string>
+     <string notr="true">background-image: url(:/menu/tictactoe.jpg);
+border-radius: 20px;</string>
     </property>
     <property name="text">
      <string/>
@@ -49,14 +54,15 @@
    <widget class="QPushButton" name="joKenPo">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>200</width>
-      <height>200</height>
+      <x>160</x>
+      <y>150</y>
+      <width>80</width>
+      <height>80</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/menu/jokenpo.jpg);</string>
+     <string notr="true">background-image: url(:/menu/jokenpo.png);
+border-radius: 20px;</string>
     </property>
     <property name="text">
      <string/>
@@ -65,36 +71,19 @@
    <widget class="QPushButton" name="github">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>230</y>
-      <width>200</width>
-      <height>200</height>
+      <x>360</x>
+      <y>150</y>
+      <width>80</width>
+      <height>80</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/menu/github.jpg);</string>
+     <string notr="true">border-radius: 20px;
+background-image: url(:/menu/github.jpg);
+</string>
     </property>
     <property name="text">
      <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>20</y>
-      <width>411</width>
-      <height>411</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>virf-logo.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
   </widget>

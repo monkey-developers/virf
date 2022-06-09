@@ -12,10 +12,11 @@ def main():
     ui.show()
 
     # Fix button image problems
-    ui.ticTacToe.setStyleSheet(f'background-image : url(src/tictactoe.jpg);')
-    ui.hangGame.setStyleSheet(f'background-image : url(src/hanggame.jpg);')
-    ui.joKenPo.setStyleSheet(f'background-image : url(src/jokenpo.jpg);')
-    ui.github.setStyleSheet(f'background-image : url(src/github.jpg);')
+    ui.setStyleSheet(f'background-image : url(src/background.png);')
+    ui.ticTacToe.setStyleSheet(f'background-image : url(src/tictactoe.jpg); border-radius: 8px;')
+    ui.hangGame.setStyleSheet(f'background-image : url(src/hanggame.jpg); border-radius: 8px;')
+    ui.joKenPo.setStyleSheet(f'background-image : url(src/jokenpo.png); border-radius: 8px;')
+    ui.github.setStyleSheet(f'background-image : url(src/github.jpg); border-radius: 8px;')
 
     ui.ticTacToe.clicked.connect(game.play)
     ui.hangGame.clicked.connect(hanggame.play)
