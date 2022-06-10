@@ -69,6 +69,7 @@ def play():
             clearInput(dlg)
 
     dlg = uic.loadUi(path.join(path.dirname(__file__), "screen.ui"))
+    QtGui.QFontDatabase.addApplicationFont("src/arcade.ttf")
 
     dlg.setStyleSheet('background-image : url(src/hanggame/assets/background.png);')
     word, mask, err = "", "", list()

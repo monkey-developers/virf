@@ -16,6 +16,7 @@ def play():
     ui = uic.loadUi(path.join(path.dirname(__file__), "screen.ui"))
 
     QtGui.QFontDatabase.addApplicationFont("src/Minecraft.ttf")
+    QtGui.QFontDatabase.addApplicationFont("src/arcade.ttf")
 
     ui.setStyleSheet(f'background-image : url(src/tictactoe/assets/background.png);')
     ui.label.setAutoFillBackground(True);
