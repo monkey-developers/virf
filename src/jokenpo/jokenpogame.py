@@ -57,6 +57,7 @@ def play():
 
 
     ui.setStyleSheet('background-image : url(src/jokenpo/assets/background.png);')
+    ui.setWindowIcon(QtGui.QIcon('src/jokenpo.png'))
     QtGui.QFontDatabase.addApplicationFont("src/arcade.ttf")
 
     ui.buttonRock.clicked.connect(lambda: turn(values[0]))

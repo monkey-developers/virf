@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>JoKenPo</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/main/background.png);</string>

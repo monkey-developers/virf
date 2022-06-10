@@ -72,6 +72,7 @@ def play():
     QtGui.QFontDatabase.addApplicationFont("src/arcade.ttf")
 
     dlg.setStyleSheet('background-image : url(src/hanggame/assets/background.png);')
+    dlg.setWindowIcon(QtGui.QIcon('src/hanggame.jpg'))
     word, mask, err = "", "", list()
 
     txtWord, txtTip = getWord()

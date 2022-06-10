@@ -1,5 +1,5 @@
 from os import path
-from PyQt5 import uic, QtWidgets
+from PyQt5 import uic, QtWidgets, QtGui
 
 from tictactoe import game, logic
 from hanggame import hanggame, hanggamelogic
@@ -12,6 +12,7 @@ def main():
     
     # Fix button image problems
     ui.setStyleSheet('background-image : url(src/background.png);')
+    ui.setWindowIcon(QtGui.QIcon('src/virf.png'))
     ui.ticTacToe.setStyleSheet('background-image : url(src/tictactoe.jpg); border-radius: 8px;')
     ui.hangGame.setStyleSheet('background-image : url(src/hanggame.jpg); border-radius: 8px;')
     ui.joKenPo.setStyleSheet('background-image : url(src/jokenpo.png); border-radius: 8px;')
