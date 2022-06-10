@@ -7,7 +7,7 @@ import threading
 
 def play():
 
-    app = QtWidgets.QApplication([])
+    # app = QtWidgets.QApplication([])
 
     ui = uic.loadUi(path.join(path.dirname(__file__), "screen.ui"))
     ui.show()
@@ -64,7 +64,7 @@ def play():
     ui.buttonPaper.clicked.connect(lambda: turn(values[1]))
     ui.buttonScissor.clicked.connect(lambda: turn(values[2]))
 
-    app.exec()
+    # app.exec()
 
 if __name__ == "__main__":
     play()
