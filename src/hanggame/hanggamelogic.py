@@ -1,30 +1,34 @@
 from os import path
 from random import randint
 
+from PyQt5 import QtGui
+
 def falseHit(dlg, err):
-    dlg.hit.setText("Missed")
+    dlg.hit.setText("ERRO!")
     dlg.errors.setText(letterSpacing(err))
     pass
 
 def trueHit(dlg):
-    dlg.hit.setText("Hit!")
+    dlg.hit.setText("ACERTO!")
     pass
 
-def lose(dlg):
-    dlg.check.setText("Reset")
-    print(">> You lose!")
-    dlg.result.setText("YOU LOSE!")
+def lose(dlg, word):
+    dlg.check.setText("RESET")
+    dlg.word.setText(letterSpacing(word))
+    dlg.hit.setText("GAME OVER")
+    dlg.input.setPlaceholderText("VOCÊ PERDEU")
+    dlg.input.setDisabled(True)
 
-def noAttempt():
-    print("> Acabou suas tentativas");
+def noAttempt(dlg):
+    dlg.hit.setText("ACABARAM SUAS TENTATIVAS");
 
-def wordWrong(dlg):
+def wordWrong(dlg, life):
     print("> Sua palavra não corresponde")
-    dlg.hit.setText("Missed")
+    dlg.hit.setText("PALAVRA ERRADA!")
+    dlg.life.setText(str(life-1))
+    eval(f'dlg.monkey.setPixmap(QtGui.QPixmap("src/hanggame/assets/macaco{dlg.life.text()}.png"))')
 
-def AlreadyTypedLetter(dlg):
-    print("> Você digitou essa letra")
-    dlg.hit.setText("Already typed that letter")
+def AlreadyTypedLetter(dlg): dlg.hit.setText("JÁ DIGITADO")
 
 def checkWord(userInput, mask, word, errorChars):
     correctCharIndex = list()
@@ -40,7 +44,7 @@ def checkWord(userInput, mask, word, errorChars):
     return hit, "".join(maskList), errorChars
 
 def emptyInput(dlg):
-    dlg.hit.setText("You didnt type anything")
+    dlg.hit.setText("DIGITE ALGO!")
 
 def clearInput(dlg):
     dlg.input.setText("")
@@ -51,9 +55,10 @@ def letterSpacing(string):
 
 def win(dlg, word):
     dlg.word.setText(letterSpacing(word))
-    dlg.check.setText("Reset")
-    print(">> You win!")
-    dlg.result.setText("YOU WIN!")
+    dlg.check.setText("RESET")
+    dlg.hit.setText("VITORIA!")
+    dlg.input.setDisabled(True)
+    dlg.input.setPlaceholderText("VOCÊ VENCEU")
     
 def getWord():
     script_dir = path.dirname(__file__)  # <-- absolute dir the script is in

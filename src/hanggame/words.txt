@@ -1,4 +1,7 @@
 banana:fruta;
 salario:o que se ganha;
 livro:conhecimento;
-lixeira:descarte
+lixeira:descarte;
+jupiter:maior planeta do sistema solar;
+agua:essencial para vida;
+lapis:serve para anotar
