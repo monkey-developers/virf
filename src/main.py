@@ -4,6 +4,7 @@ from PyQt5 import uic, QtWidgets, QtGui
 from tictactoe import game, logic
 from hanggame import hanggame, hanggamelogic
 from jokenpo import jokenpogame
+from webbrowser import open
 
 def main():
     app = QtWidgets.QApplication([])
@@ -21,6 +22,7 @@ def main():
     ui.joKenPo.clicked.connect(jokenpogame.play)
     ui.ticTacToe.clicked.connect(game.play)
     ui.hangGame.clicked.connect(hanggame.play)
+    ui.github.clicked.connect(lambda: open("https://github.com/abehidek", new=2))
     
     ui.show()
     app.exec()
